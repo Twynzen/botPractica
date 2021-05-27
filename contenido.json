@@ -3,13 +3,19 @@
         {
             "tag":"saludo",
             "patrones":["hola","un saludo","hello"],
-            "respuestas":["Hola que tal","¿Cómo desea preguntar el día de hoy?","Un gusto de verte"]
+            "respuestas":["Hola que tal","buenas","Un gusto de verte"]
 
         },
         {
             "tag":"despedida",
-            "patrones":["Adios","Nos veremos","Chao"],
-            "respuestas":["Estoy al tanto de cualquier otra duda","Nos olemos luego","te esperaré"]
+            "patrones":["Adios","hasta luego","Chao"],
+            "respuestas":["Estoy al tanto de cualquier otra duda","Nos olemos luego","te esperare de nuevo"]
+
+        },
+        {
+            "tag":"ayuda",
+            "patrones":["me puedes ayudar","?","tengo dudas"],
+            "respuestas":["no entiendo ni papa las preguntas soy un bot nuevo","No ves que soy un bot chikito","no tengo respuesta de momento"]
 
         }
 

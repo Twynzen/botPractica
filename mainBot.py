@@ -63,7 +63,27 @@ red = tflearn.regression(red)
 
 modelo = tflearn.DNN(red)
 modelo.fit(entrenamiento, salida, n_epoch = 1000, batch_size = 10, show_metric = True)
-modelo.save("modelo.tflearn")            
+modelo.save("modelo.tflearn")  
+
+def mainBot():
+    while True:
+        entrada = input("Tu: ")
+        cubeta = [0 for _ in range(len(palabras))]
+        entradaProcesada = nltk.word_tokenize(entrada)
+        entradaProcesada = [stemmer.stem(palabra.lower()) for palabra in entradaProcesada]
+        for palabraIndividual in entradaProcesada:
+            for i, palabra in enumerate(palabras):
+                if palabra == palabraIndividual:
+                    cubeta[i] = 1
+        resultados = modelo.predict([numpy.array(cubeta)])
+        resultadosIndices = numpy.argmax(resultados)
+        tag = tags[resultadosIndices]
+        
+        for tagAux in datos["contenido"]:
+            if tagAux["tag"] == tag:
+                respuesta = tagAux["respuestas"]
+        print("BOT: ", random.choice(respuesta)) 
+mainBot()
     
         
 
